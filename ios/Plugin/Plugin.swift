@@ -116,13 +116,13 @@ public class NativeBiometric: CAPPlugin {
                         errorCode = "17"
 
                     case LAError.biometryNotAvailable.rawValue:
-                        errorCode = 1
+                        errorCode = "1"
                 
                     case LAError.biometryLockout.rawValue:
-                        errorCode = 2 //"Authentication could not continue because the user has been locked out of biometric authentication, due to failing authentication too many times."
+                        errorCode = "2" //"Authentication could not continue because the user has been locked out of biometric authentication, due to failing authentication too many times."
                 
                     case LAError.biometryNotEnrolled.rawValue:
-                        errorCode = 3//message = "Authentication could not start because the user has not enrolled in biometric authentication."
+                        errorCode = "3" //message = "Authentication could not start because the user has not enrolled in biometric authentication."
                         
                     default:
                         errorCode = "0" // Biometrics unavailable
