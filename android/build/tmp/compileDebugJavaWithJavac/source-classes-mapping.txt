@@ -1,0 +1,8 @@
+com/epicshaggy/biometric/capacitornativebiometric/BuildConfig.java
+ com.epicshaggy.biometric.capacitornativebiometric.BuildConfig
+com/epicshaggy/biometric/NativeBiometric.java
+ com.epicshaggy.biometric.NativeBiometric
+com/epicshaggy/biometric/AuthAcitivy.java
+ com.epicshaggy.biometric.AuthAcitivy
+ com.epicshaggy.biometric.AuthAcitivy$1
+ com.epicshaggy.biometric.AuthAcitivy$2
