@@ -127,7 +127,7 @@ public class NativeBiometric: CAPPlugin {
                     default:
                         errorCode = "0" // Biometrics unavailable
                     }                    
-                    call.reject(error.localizedDescription, nil, errorCode)
+                    call.reject(error.localizedDescription, errorCode, error )
                 }
                 
             }
