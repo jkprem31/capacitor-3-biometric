@@ -31,8 +31,18 @@ public class NativeBiometric: CAPPlugin {
         
         obj["isAvailable"] = false
         
+        switch context.biometryType {
+        case .touchID:
+            obj["biometryType"] = 1
+        case .faceID:
+            obj["biometryType"] = 2
+        default:
+            obj["biometryType"] = 0
+        }
+        
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error){
             obj["isAvailable"] = true
+            call.resolve(obj)
         } else {
             guard let authError = error else {
                 return
@@ -52,18 +62,9 @@ public class NativeBiometric: CAPPlugin {
                     errorCode = 0 //"Did not find error code on LAError object"
             }
             obj["errorCode"] = errorCode
+            call.resolve(obj)
         }
-        
-        switch context.biometryType {
-        case .touchID:
-            obj["biometryType"] = 1
-        case .faceID:
-            obj["biometryType"] = 2
-        default:
-            obj["biometryType"] = 0
-        }
-        
-        call.resolve(obj)
+                        
     }
     
     @objc func verifyIdentity(_ call: CAPPluginCall){
